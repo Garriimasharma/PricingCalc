@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monitor+ — Pricing</title>
+<title>Monitor+ — Price Estimator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -18,10 +18,8 @@
     --amber:#C7791F;
     --amber-bright:#F0A93E;
     --teal:#3B6E5E;
-    --danger:#A8412E;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   body{
     margin:0;
     background:var(--paper);
@@ -32,85 +30,7 @@
   .mono{font-family:'IBM Plex Mono', monospace;}
   .wrap{max-width:1040px;margin:0 auto;padding:0 32px;}
 
-  /* ---------- Header ---------- */
-  header{
-    border-bottom:1px solid var(--line);
-    padding:22px 0;
-  }
-  .header-row{display:flex;align-items:center;justify-content:space-between;}
-  .brand{display:flex;align-items:baseline;gap:8px;}
-  .brand .name{font-weight:700;font-size:20px;letter-spacing:-0.01em;}
-  .brand .by{font-size:13px;color:var(--ink-soft);}
-  nav a{
-    color:var(--ink);
-    text-decoration:none;
-    font-size:14px;
-    font-weight:500;
-    border-bottom:1px solid transparent;
-  }
-  nav a:hover{border-bottom-color:var(--ink);}
-
-  /* ---------- Hero ---------- */
-  .hero{
-    padding:76px 0 64px;
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:56px;
-    align-items:center;
-  }
-  .hero h1{
-    font-size:44px;
-    line-height:1.14;
-    letter-spacing:-0.015em;
-    margin:0 0 22px;
-    max-width:15ch;
-  }
-  .hero p{
-    font-size:17px;
-    color:var(--ink-soft);
-    max-width:46ch;
-    margin:0 0 30px;
-  }
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    background:var(--navy);
-    color:#fff;
-    border:none;
-    padding:14px 24px;
-    font-size:15px;
-    font-weight:600;
-    font-family:inherit;
-    cursor:pointer;
-    border-radius:3px;
-  }
-  .btn:hover{background:var(--navy-deep);}
-  .btn-ghost{
-    background:transparent;
-    color:var(--navy);
-    border:1px solid var(--line);
-  }
-  .btn-ghost:hover{border-color:var(--navy);background:transparent;}
-
-  .schematic{
-    background:var(--navy-deep);
-    border-radius:4px;
-    padding:28px;
-    position:relative;
-  }
-  .schematic svg{width:100%;height:auto;display:block;}
-  .schematic .caption{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    color:#8FA3BC;
-    margin-top:14px;
-    letter-spacing:0.02em;
-  }
-
-  /* ---------- Section shells ---------- */
   section{padding:56px 0;}
-  .rule{border-top:1px solid var(--line);}
   .eyebrow{
     font-size:13px;
     color:var(--amber);
@@ -129,47 +49,6 @@
     font-size:15.5px;
   }
 
-  /* ---------- Features (spec-sheet list) ---------- */
-  .feature-list{border-top:1px solid var(--line);}
-  .feature-row{
-    display:grid;
-    grid-template-columns:260px 1fr;
-    gap:32px;
-    padding:22px 0;
-    border-bottom:1px solid var(--line);
-  }
-  .feature-row .label{
-    font-weight:600;
-    font-size:16px;
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-  }
-  .feature-row .label .dot{
-    width:7px;height:7px;border-radius:50%;
-    background:var(--amber);
-    margin-top:8px;
-    flex-shrink:0;
-  }
-  .feature-row .desc{color:var(--ink-soft);font-size:15px;max-width:60ch;}
-
-  /* ---------- Pricing philosophy band ---------- */
-  .band{
-    background:var(--navy);
-    color:#fff;
-    padding:44px 0;
-  }
-  .band .wrap{display:flex;gap:40px;align-items:center;}
-  .band p{
-    font-size:19px;
-    line-height:1.5;
-    margin:0;
-    max-width:56ch;
-    color:#E8ECF1;
-  }
-  .band strong{color:var(--amber-bright);font-weight:600;}
-
-  /* ---------- Calculator ---------- */
   .calc-layout{
     display:grid;
     grid-template-columns:1fr 340px;
@@ -225,7 +104,6 @@
   .option.selected .opt-adj{color:var(--navy);}
   .option[data-flag="quote"] .opt-adj{color:var(--amber);}
 
-  /* ---------- Readout panel ---------- */
   .readout{
     position:sticky;
     top:24px;
@@ -277,25 +155,25 @@
     font-family:'IBM Plex Mono', monospace;
     color:#E8ECF1;
   }
-  .onboard-line{
-    margin-top:18px;
-    padding-top:16px;
-    border-top:1px solid #2C3E54;
-  }
-  .onboard-line .r-label{margin-bottom:6px;}
-  .onboard-line .r-onboard-value{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:20px;
-    font-weight:600;
-    color:#fff;
-  }
-  .readout .cta{
-    margin-top:22px;
-    width:100%;
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
     background:var(--amber);
     color:#1B1400;
+    border:none;
+    padding:14px 24px;
+    font-size:15px;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    border-radius:3px;
+    width:100%;
+    margin-top:22px;
+    text-decoration:none;
   }
-  .readout .cta:hover{background:var(--amber-bright);}
+  .btn:hover{background:var(--amber-bright);}
   .disclaimer{
     font-size:11.5px;
     color:#6E7C8C;
@@ -303,114 +181,19 @@
     line-height:1.4;
   }
 
-  /* ---------- Footer ---------- */
-  footer{
-    border-top:1px solid var(--line);
-    padding:40px 0 56px;
-  }
-  footer .foot-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:16px;
-  }
-  footer .foot-copy{font-size:13px;color:var(--ink-soft);}
-
   @media (max-width:820px){
-    .hero{grid-template-columns:1fr;padding-top:48px;}
-    .hero h1{font-size:34px;max-width:none;}
     .calc-layout{grid-template-columns:1fr;}
     .readout{position:static;}
-    .feature-row{grid-template-columns:1fr;gap:8px;}
-    .band .wrap{flex-direction:column;align-items:flex-start;}
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap header-row">
-    <div class="brand">
-      <span class="name">Monitor+</span>
-      <span class="by">by ei3</span>
-    </div>
-    <nav><a href="#calculator">Estimate your price →</a></nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="wrap" style="display:contents;">
-    <div>
-      <p class="eyebrow">Machine monitoring, priced per machine</p>
-      <h1>See what your machines are actually doing.</h1>
-      <p>Monitor+ turns raw machine signals into live dashboards, configurable triggers, and a permanent record — with pricing that scales with what you actually track, not a per-user license.</p>
-      <a href="#calculator" class="btn">Estimate your price</a>
-    </div>
-    <div class="schematic">
-      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="20" width="280" height="150" rx="2" fill="none" stroke="#3E5470" stroke-width="1"/>
-        <line x1="20" y1="55" x2="300" y2="55" stroke="#2C3E54" stroke-width="1"/>
-        <polyline points="30,140 60,110 85,125 110,70 140,95 165,60 190,85 215,50 245,75 270,45 290,65"
-          fill="none" stroke="#F0A93E" stroke-width="2"/>
-        <circle cx="60" cy="110" r="2.5" fill="#F0A93E"/>
-        <circle cx="140" cy="95" r="2.5" fill="#F0A93E"/>
-        <circle cx="215" cy="50" r="2.5" fill="#F0A93E"/>
-        <circle cx="270" cy="45" r="2.5" fill="#F0A93E"/>
-        <text x="30" y="40" fill="#8FA3BC" font-family="IBM Plex Mono, monospace" font-size="10">MACHINE-04A · LIVE</text>
-        <line x1="20" y1="185" x2="300" y2="185" stroke="#2C3E54" stroke-width="1"/>
-        <text x="20" y="205" fill="#5D7089" font-family="IBM Plex Mono, monospace" font-size="9">TEMP · VIBRATION · CYCLE COUNT · PRESSURE</text>
-      </svg>
-      <div class="caption">Live signal trace — configurable triggers on any threshold</div>
-    </div>
-  </div>
-</section>
-
-<section class="rule">
-  <div class="wrap">
-    <p class="eyebrow">What's included</p>
-    <h2>Built for the plant floor, not the dashboard demo</h2>
-    <p class="section-intro">Every Monitor+ machine gets the same core capability. What you configure below is how much data, how fast, and for how long.</p>
-    <div class="feature-list">
-      <div class="feature-row">
-        <div class="label"><span class="dot"></span>Live data points</div>
-        <div class="desc">Track everything from temperature and vibration to cycle counts and pressure — up to 100+ signals per machine.</div>
-      </div>
-      <div class="feature-row">
-        <div class="label"><span class="dot"></span>Configurable triggers</div>
-        <div class="desc">Set alert conditions on any signal. Get notified the moment a threshold is crossed, not after a shift ends.</div>
-      </div>
-      <div class="feature-row">
-        <div class="label"><span class="dot"></span>Flexible sampling</div>
-        <div class="desc">Dial the read frequency from a slow, low-cost heartbeat to near real-time streaming, per machine.</div>
-      </div>
-      <div class="feature-row">
-        <div class="label"><span class="dot"></span>Full history</div>
-        <div class="desc">Three months is included with every machine. Extend to a decade — or indefinitely — when you need the record.</div>
-      </div>
-      <div class="feature-row">
-        <div class="label"><span class="dot"></span>ei3 Bridge</div>
-        <div class="desc">Optional secure remote connection into the machine for deeper diagnostics and support access.</div>
-      </div>
-      <div class="feature-row">
-        <div class="label"><span class="dot"></span>Simple access</div>
-        <div class="desc">Anyone granted access sees the full configuration. No confusing permission tiers to manage.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <p>Monitor+ is priced <strong>per machine</strong>, not by the byte. You choose how much you track, how often, and how long you keep it — everything else is included.</p>
-  </div>
-</section>
-
 <section id="calculator">
   <div class="wrap">
     <p class="eyebrow">Estimate your price</p>
     <h2>Configure your machine</h2>
-    <p class="section-intro">Answer four questions to estimate your monthly cost per machine. Onboarding is a separate one-time fee, shown alongside your estimate.</p>
+    <p class="section-intro">Answer four questions to estimate your monthly cost per machine.</p>
 
     <div class="calc-layout">
       <div class="questions">
@@ -420,22 +203,19 @@
           <h3>How many data points will you track?</h3>
           <p class="q-sub">Signals like temperature, vibration, pressure, or cycle counts, per machine.</p>
           <div class="options">
-            <div class="option" data-value="0" data-base="75" data-onboard="5000">
+            <div class="option" data-value="0" data-base="75">
               <div class="opt-title">0–20</div>
-              <div class="opt-detail">2 triggers included</div>
               <div class="opt-adj">$75/mo base</div>
             </div>
-            <div class="option" data-value="1" data-base="175" data-onboard="8000">
+            <div class="option" data-value="1" data-base="175">
               <div class="opt-title">21–50</div>
-              <div class="opt-detail">5 triggers included</div>
               <div class="opt-adj">$175/mo base</div>
             </div>
-            <div class="option" data-value="2" data-base="325" data-onboard="12500">
+            <div class="option" data-value="2" data-base="325">
               <div class="opt-title">51–100</div>
-              <div class="opt-detail">8 triggers included</div>
               <div class="opt-adj">$325/mo base</div>
             </div>
-            <div class="option" data-value="3" data-base="0" data-onboard="0" data-flag="quote">
+            <div class="option" data-value="3" data-base="0" data-flag="quote">
               <div class="opt-title">100+</div>
               <div class="opt-detail">Custom configuration</div>
               <div class="opt-adj">Contact us</div>
@@ -522,39 +302,25 @@
       <div class="readout" id="readout">
         <div class="r-label">EST. MONTHLY COST — PER MACHINE</div>
         <div id="readoutBody">
-          <div class="r-value" id="rValue">$75</div>
+          <div class="r-value" id="rValue">$175</div>
           <div class="r-unit">/mo, before selections</div>
           <div class="breakdown" id="breakdown">
-            <div class="b-row"><span>Base (data points)</span><span id="bBase">$75</span></div>
+            <div class="b-row"><span>Base (data points)</span><span id="bBase">$175</span></div>
             <div class="b-row"><span>Sampling adjustment</span><span id="bSampling">+$0</span></div>
             <div class="b-row"><span>Retention add-on</span><span id="bRetention">+$0</span></div>
             <div class="b-row"><span>Bridge add-on</span><span id="bBridge">+$0</span></div>
           </div>
-          <div class="onboard-line">
-            <div class="r-label">ONE-TIME ONBOARDING</div>
-            <div class="r-onboard-value" id="rOnboard">$5,000</div>
-          </div>
         </div>
-        <a href="#" class="btn cta">Talk to sales</a>
-        <div class="disclaimer">Estimate only, for planning purposes. Final pricing is confirmed with your ei3 contact during onboarding. "Contact us" configurations are quoted individually.</div>
+        <a href="#" class="btn">Talk to sales</a>
+        <div class="disclaimer">Estimate only, for planning purposes. Final pricing is confirmed with your ei3 contact. "Contact us" configurations are quoted individually.</div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot-row">
-    <div class="foot-copy">Monitor+ is an ei3 product. Pricing shown is illustrative and subject to final confirmation.</div>
-    <a href="#" class="btn btn-ghost">Contact ei3 sales</a>
-  </div>
-</footer>
-
 <script>
-  const state = { points: null, sampling: null, retention: 0, bridge: 0 };
+  const state = { points: '1', sampling: '0', retention: '0', bridge: '0' };
   const dataCache = { points: {}, sampling: {}, retention: {}, bridge: {} };
-
-  // default selections: points=1 (21-50), sampling=0 (standard), retention=0, bridge=0
-  const defaults = { points: '1', sampling: '0', retention: '0', bridge: '0' };
 
   document.querySelectorAll('.question').forEach(q => {
     const key = q.getAttribute('data-question');
@@ -562,11 +328,11 @@
       const val = opt.getAttribute('data-value');
       dataCache[key][val] = {
         base: opt.getAttribute('data-base'),
-        onboard: opt.getAttribute('data-onboard'),
         mult: opt.getAttribute('data-mult'),
         flat: opt.getAttribute('data-flat'),
         quote: opt.getAttribute('data-flag') === 'quote'
       };
+      if (state[key] === val) opt.classList.add('selected');
       opt.addEventListener('click', () => {
         q.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
         opt.classList.add('selected');
@@ -574,14 +340,6 @@
         calculate();
       });
     });
-  });
-
-  // apply defaults visually
-  Object.entries(defaults).forEach(([key, val]) => {
-    const q = document.querySelector('.question[data-question="' + key + '"]');
-    const opt = q.querySelector('.option[data-value="' + val + '"]');
-    opt.classList.add('selected');
-    state[key] = val;
   });
 
   function fmt(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
@@ -592,7 +350,6 @@
     const retentionData = dataCache.retention[state.retention];
     const bridgeData = dataCache.bridge[state.bridge];
 
-    const rValue = document.getElementById('rValue');
     const readoutBody = document.getElementById('readoutBody');
 
     if (pointsData.quote || samplingData.quote){
@@ -602,7 +359,6 @@
       return;
     }
 
-    // rebuild body if it was replaced by quote message
     if (!document.getElementById('rValue')){
       readoutBody.innerHTML = `
         <div class="r-value" id="rValue">$0</div>
@@ -612,10 +368,6 @@
           <div class="b-row"><span>Sampling adjustment</span><span id="bSampling">+$0</span></div>
           <div class="b-row"><span>Retention add-on</span><span id="bRetention">+$0</span></div>
           <div class="b-row"><span>Bridge add-on</span><span id="bBridge">+$0</span></div>
-        </div>
-        <div class="onboard-line">
-          <div class="r-label">ONE-TIME ONBOARDING</div>
-          <div class="r-onboard-value" id="rOnboard">$0</div>
         </div>
       `;
     }
@@ -633,7 +385,6 @@
     document.getElementById('bSampling').textContent = (samplingCost >= 0 ? '+' : '') + fmt(samplingCost);
     document.getElementById('bRetention').textContent = '+' + fmt(retentionFlat);
     document.getElementById('bBridge').textContent = '+' + fmt(bridgeFlat);
-    document.getElementById('rOnboard').textContent = fmt(parseFloat(pointsData.onboard));
   }
 
   calculate();
